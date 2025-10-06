@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kloud Technologies - Premium Internet Service Provider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e0f2ff 0%, #f0f9ff 25%, #e0e7ff 50%, #fae8ff 75%, #fef3c7 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.4);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .slide {
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(14, 165, 233, 0.3);
+        }
+        
+        .shine {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shine::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .glow {
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.5);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="glass-strong fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white font-bold text-xl shine">
+                        K
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Kloud Technologies</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-cyan-500 font-medium transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-cyan-500 font-medium transition">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-cyan-500 font-medium transition">Services</a>
+                    <a href="#packages" class="text-gray-700 hover:text-cyan-500 font-medium transition">Packages</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-cyan-500 font-medium transition">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-cyan-500 font-medium transition">Contact</a>
+                </div>
+                <button class="btn-gradient text-white px-6 py-2 rounded-full font-semibold">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slider -->
+    <section id="home" class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-block glass px-4 py-2 rounded-full">
+                        <span class="text-cyan-600 font-semibold">🚀 Premium ISP & Internet Exchange</span>
+                    </div>
+                    <h1 class="text-6xl md:text-7xl font-bold leading-tight">
+                        <span class="gradient-text">Connect</span> to the<br>
+                        <span class="text-gray-800">Future of</span><br>
+                        <span class="gradient-text">Internet</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Experience ultra-fast speeds, rock-solid reliability, and enterprise-grade security. We don't just provide internet—we redefine how you experience it.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg glow">
+                            Explore Packages →
+                        </button>
+                        <button class="glass px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition">
+                            Contact Sales
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-8 pt-4">
+                        <div>
+                            <div class="text-3xl font-bold gradient-text">99.9%</div>
+                            <div class="text-sm text-gray-600">Uptime</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold gradient-text">10K+</div>
+                            <div class="text-sm text-gray-600">Customers</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold gradient-text">24/7</div>
+                            <div class="text-sm text-gray-600">Support</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="glass-strong rounded-3xl p-8 floating" id="slider">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="Technology" class="rounded-2xl w-full h-96 object-cover slide" id="slide1">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800" alt="Network" class="rounded-2xl w-full h-96 object-cover slide hidden" id="slide2">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" alt="Team" class="rounded-2xl w-full h-96 object-cover slide hidden" id="slide3">
+                    </div>
+                    <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                        <button class="w-3 h-3 rounded-full bg-cyan-500" onclick="showSlide(0)"></button>
+                        <button class="w-3 h-3 rounded-full bg-gray-300" onclick="showSlide(1)"></button>
+                        <button class="w-3 h-3 rounded-full bg-gray-300" onclick="showSlide(2)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-cyan-500 font-semibold text-lg">WHO WE ARE</span>
+                <h2 class="text-5xl font-bold mt-4 gradient-text">About Kloud Technologies</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-strong rounded-3xl p-8 card-hover text-center">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Lightning Fast</h3>
+                    <p class="text-gray-600">Experience speeds that keep up with your ambitions. Our infrastructure is built for the future.</p>
+                </div>
+                <div class="glass-strong rounded-3xl p-8 card-hover text-center">
+                    <div class="text-5xl mb-4">🔒</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Enterprise Security</h3>
+                    <p class="text-gray-600">Bank-level encryption and security protocols to keep your data safe and secure 24/7.</p>
+                </div>
+                <div class="glass-strong rounded-3xl p-8 card-hover text-center">
+                    <div class="text-5xl mb-4">🌐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Global Network</h3>
+                    <p class="text-gray-600">Connected to major internet exchanges worldwide for optimal routing and minimal latency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-cyan-500 font-semibold text-lg">WHAT WE OFFER</span>
+                <h2 class="text-5xl font-bold mt-4 gradient-text">Our Premium Services</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass rounded-3xl p-8 card-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-3xl mb-6">🏠</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Home Internet</h3>
+                    <p class="text-gray-600 mb-4">Blazing-fast fiber internet for seamless streaming, gaming, and browsing for your entire household.</p>
+                    <a href="#" class="text-cyan-500 font-semibold hover:underline">Learn More →</a>
+                </div>
+                <div class="glass rounded-3xl p-8 card-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-3xl mb-6">🏢</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Corporate Solutions</h3>
+                    <p class="text-gray-600 mb-4">Dedicated bandwidth, SLA guarantees, and premium support for businesses of all sizes.</p>
+                    <a href="#" class="text-cyan-500 font-semibold hover:underline">Learn More →</a>
+                </div>
+                <div class="glass rounded-3xl p-8 card-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-3xl mb-6">🔗</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Internet Exchange</h3>
+                    <p class="text-gray-600 mb-4">Peer with major networks and CDNs for optimized content delivery and reduced latency.</p>
+                    <a href="#" class="text-cyan-500 font-semibold hover:underline">Learn More →</a>
+                </div>
+                <div class="glass rounded-3xl p-8 card-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-3xl mb-6">☁️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Cloud Services</h3>
+                    <p class="text-gray-600 mb-4">Scalable cloud infrastructure with 99.9% uptime guarantee and enterprise-grade support.</p>
+                    <a href="#" class="text-cyan-500 font-semibold hover:underline">Learn More →</a>
+                </div>
+                <div class="glass rounded-3xl p-8 card-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-3xl mb-6">🛡️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Managed Security</h3>
+                    <p class="text-gray-600 mb-4">Advanced threat protection, firewall management, and 24/7 security monitoring.</p>
+                    <a href="#" class="text-cyan-500 font-semibold hover:underline">Learn More →</a>
+                </div>
+                <div class="glass rounded-3xl p-8 card-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-3xl mb-6">📞</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">VoIP Solutions</h3>
+                    <p class="text-gray-600 mb-4">Crystal-clear voice calls, video conferencing, and unified communications platform.</p>
+                    <a href="#" class="text-cyan-500 font-semibold hover:underline">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-cyan-500 font-semibold text-lg">PRICING PLANS</span>
+                <h2 class="text-5xl font-bold mt-4 gradient-text">Choose Your Perfect Package</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass rounded-3xl p-8 card-hover">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Starter</h3>
+                        <p class="text-gray-600 mb-6">Perfect for individuals</p>
+                        <div class="mb-8">
+                            <span class="text-5xl font-bold gradient-text">50</span>
+                            <span class="text-2xl text-gray-600">Mbps</span>
+                        </div>
+                        <div class="text-3xl font-bold mb-6">৳999<span class="text-lg text-gray-600">/month</span></div>
+                        <ul class="space-y-4 mb-8 text-left">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Unlimited Data</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 5 Devices</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 24/7 Support</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Free Installation</li>
+                        </ul>
+                        <button class="glass px-8 py-3 rounded-full font-semibold w-full hover:scale-105 transition">Choose Plan</button>
+                    </div>
+                </div>
+                <div class="glass-strong rounded-3xl p-8 card-hover relative overflow-hidden border-2 border-cyan-400">
+                    <div class="absolute top-4 right-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-1 rounded-full text-sm font-semibold">POPULAR</div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Professional</h3>
+                        <p class="text-gray-600 mb-6">Best for families</p>
+                        <div class="mb-8">
+                            <span class="text-5xl font-bold gradient-text">100</span>
+                            <span class="text-2xl text-gray-600">Mbps</span>
+                        </div>
+                        <div class="text-3xl font-bold mb-6">৳1,999<span class="text-lg text-gray-600">/month</span></div>
+                        <ul class="space-y-4 mb-8 text-left">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Unlimited Data</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 10 Devices</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Priority Support</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Free Installation</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Free Router</li>
+                        </ul>
+                        <button class="btn-gradient text-white px-8 py-3 rounded-full font-semibold w-full glow">Choose Plan</button>
+                    </div>
+                </div>
+                <div class="glass rounded-3xl p-8 card-hover">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Enterprise</h3>
+                        <p class="text-gray-600 mb-6">For businesses</p>
+                        <div class="mb-8">
+                            <span class="text-5xl font-bold gradient-text">500</span>
+                            <span class="text-2xl text-gray-600">Mbps</span>
+                        </div>
+                        <div class="text-3xl font-bold mb-6">৳9,999<span class="text-lg text-gray-600">/month</span></div>
+                        <ul class="space-y-4 mb-8 text-left">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Unlimited Data</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Unlimited Devices</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Dedicated Support</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Free Installation</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Static IP</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 99.9% SLA</li>
+                        </ul>
+                        <button class="glass px-8 py-3 rounded-full font-semibold w-full hover:scale-105 transition">Choose Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-cyan-500 font-semibold text-lg">TESTIMONIALS</span>
+                <h2 class="text-5xl font-bold mt-4 gradient-text">What Our Clients Say</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-strong rounded-3xl p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://i.pravatar.cc/100?img=1" alt="Client" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Ahmed Rahman</h4>
+                            <p class="text-sm text-gray-600">CEO, TechCorp BD</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 italic">"Kloud Technologies has transformed our business connectivity. The speed and reliability are unmatched. Highly recommended!"</p>
+                </div>
+                <div class="glass-strong rounded-3xl p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://i.pravatar.cc/100?img=5" alt="Client" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Fatima Akter</h4>
+                            <p class="text-sm text-gray-600">Marketing Director</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 italic">"Best internet service I've ever experienced. Customer support is outstanding and the speeds are consistently fast."</p>
+                </div>
+                <div class="glass-strong rounded-3xl p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://i.pravatar.cc/100?img=8" alt="Client" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Karim Hossain</h4>
+                            <p class="text-sm text-gray-600">Entrepreneur</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 italic">"Switched from another provider and couldn't be happier. Kloud's service is premium in every sense. Worth every taka!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="glass-strong rounded-3xl p-12">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6 gradient-text">Get in Touch</h2>
+                        <p class="text-gray-600 mb-8">Ready to experience premium internet? Contact us today and let's discuss how we can elevate your connectivity.</p>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white">📧</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Email</p>
+                                    <p class="text-gray-600">info@kloud.com.bd</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white">📞</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Phone</p>
+                                    <p class="text-gray-600">+880 1XXX-XXXXXX</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-white">📍</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Address</p>
+                                    <p class="text-gray-600">Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <form class="space-y-6">
+                            <div>
+                                <input type="text" placeholder="Your Name" class="glass w-full px-6 py-4 rounded-2xl outline-none focus:ring-2 focus:ring-cyan-400 transition">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Your Email" class="glass w-full px-6 py-4 rounded-2xl outline-none focus:ring-2 focus:ring-cyan-400 transition">
+                            </div>
+                            <div>
+                                <input type="tel" placeholder="Your Phone" class="glass w-full px-6 py-4 rounded-2xl outline-none focus:ring-2 focus:ring-cyan-400 transition">
+                            </div>
+                            <div>
+                                <textarea placeholder="Your Message" rows="4" class="glass w-full px-6 py-4 rounded-2xl outline-none focus:ring-2 focus:ring-cyan-400 transition"></textarea>
+                            </div>
+                            <button type="submit" class="btn-gradient text-white px-8 py-4 rounded-full font-semibold w-full glow">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-strong py-12 px-6 mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white font-bold">K</div>
+                        <span class="text-xl font-bold gradient-text">Kloud</span>
+                    </div>
+                    <p class="text-gray-600">Premium Internet Service Provider & Internet Exchange</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-800">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-cyan-500">About Us</a></li>
+                        <li><a href="#" class="hover:text-cyan-500">Services</a></li>
+                        <li><a href="#" class="hover:text-cyan-500">Packages</a></li>
+                        <li><a href="#" class="hover:text-cyan-500">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-800">Services</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-cyan-500">Home Internet</a></li>
+                        <li><a href="#" class="hover:text-cyan-500">Corporate</a></li>
+                        <li><a href="#" class="hover:text-cyan-500">Cloud Services</a></li>
+                        <li><a href="#" class="hover:text-cyan-500">VoIP</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-800">Connect</h4>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:scale-110 transition">📘</a>
+                        <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:scale-110 transition">🐦</a>
+                        <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:scale-110 transition">📷</a>
+                        <a href="#" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:scale-110 transition">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 pt-8 text-center text-gray-600">
+                <p>&copy; 2025 Kloud Technologies Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = ['slide1', 'slide2', 'slide3'];
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                const element = document.getElementById(slide);
+                if (i === index) {
+                    element.classList.remove('hidden');
+                } else {
+                    element.classList.add('hidden');
+                }
+            });
+            currentSlide = index;
+            
+            // Update dots
+            const dots = document.querySelectorAll('#slider + div button');
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('bg-cyan-500');
+                    dot.classList.remove('bg-gray-300');
+                } else {
+                    dot.classList.remove('bg-cyan-500');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+        
+        // Auto-advance slides
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
